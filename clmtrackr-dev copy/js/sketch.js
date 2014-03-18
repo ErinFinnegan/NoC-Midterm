@@ -7,7 +7,8 @@ var systems = [];
 function setup() {
   var text = createHTML("click to add particle systems");
   text.position(10,365);
-  createGraphics(640,380);
+  createGraphics(displayWidth,displayHeight);
+ // canvas.position(150, 50);  //for some reason this kills the sketch
 }
 
 function draw() {
