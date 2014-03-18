@@ -10,6 +10,7 @@ function setup() {
   canvas = createGraphics(400, 300);
   canvas.position(160, 125);
   canvas.class("puke");   //I am not sure what the .class part does
+  //canvas.style("position : relative;");  //this didn't work
 }
 
 function draw() {
