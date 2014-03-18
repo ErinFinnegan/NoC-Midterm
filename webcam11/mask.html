@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Article: http://www.paulrhayes.com/2012-11/fun-with-face-detection-canvas-and-webcam-video -->
+    <!-- Demo: http://www.paulrhayes.com/experiments/webcam/mask.html -->
+    <!-- Originally posted: 18th Nov 2012 -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Paint with Your Face</title>
+    <meta name="author" content="Adapted from Paul Hayes by Erin Finnegan" />
+   <!-- <link rel="stylesheet" href="../experiment-styles.css" /> -->
+
+    <!--   <link rel="stylesheet" href="css/experiment.css" />    -->
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body class="experiment">
+    <div class="wrapper">
+
+<canvas width="400" height="320" class="mask" id="myCanvas5"></canvas>
+
+
+        <p class="learn">
+            <p>Paint with your tongue!</p>
+<p>
+    Press shift to clear. Any other key controls the color, comma and period keys control line width.
+</p>
+            <br><a href="http://www.paulrhayes.com/experiments/webcam/mask.html">The mask experiment this is based on</a></br>
+            <a href="http://www.paulrhayes.com/2012-11/fun-with-face-detection-canvas-and-webcam-video">learn how this works</a>.
+        </p>
+<!-- Include the CCV image processing and face detection libraries -->
+<script src="js/ccv.js"></script>
+<script src="js/face.js"></script>
+    </div>
+    
+    
+    <div id="buttons">
+     <input type="button" id="clear" value="Clear">
+    </div>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="js/experiment.js"></script>
+<script>
+    myArray();
+
+//      function getMousePos(canvas, evt) {
+//        var rect = canvas.getBoundingClientRect();
+//        return {
+//          x: evt.clientX - rect.left,
+//          y: evt.clientY - rect.top
+//        };
+//      }
+    function myArray() {
+        ArrayofX = new Array();
+        ArrayofY = new Array();        
+        faceX = 0;
+        faceY = 0;
+        faceDetected = false;
+        //console.log("FaceX in the mask.html= " + faceX);
+        //console.log("FaceY in the mask.html= " + faceY);
+        //console.log("FaceDetected = " + faceDetected);   
+    }
+
+      var faceX= 0;
+      var faceY = 0;
+ //     var strokeWidth;
+      var strokeWidth;
+      var canvas = document.getElementById('myCanvas5');
+      var context = canvas.getContext('2d');
+      var ctx= canvas.getContext("2d");
+          ctx.lineWidth=strokeWidth;
+          ctx.lineCap = 'round';
+          lineColor = "#FFFFFF";
+
+
+
+//        if (faceDetected = true) {
+//            ArrayofX.push(faceX);
+//            ArrayofY.push(faceY);                
+//        };
+        
+
+
+        if (ArrayofX.length > 1)
+        {
+          context.beginPath();
+          context.moveTo(ArrayofX[0], ArrayofY[0]);
+          for (i = 1; i < ArrayofX.length; i++)
+          {
+            context.lineTo(ArrayofX[i], ArrayofY[i]);
+          }
+          context.stroke();
+        }
+      //}, false);
+
+    // bind event handler to clear button
+      document.getElementById('clear').addEventListener('click', function() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        ArrayofX = Array();
+        ArrayofY = Array();
+      }, false);
+
+//listen for keypresses and change the color
+    document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 66) {
+      //alert('Left was pressed');
+      lineColor = '#032EFF';  //blue
+    }
+    //removed an else
+   else if(event.keyCode == 71) {
+      //alert('Right was pressed');
+      lineColor = '#3CFF03';  //green
+    }
+    else if(event.keyCode == 188) {
+      //alert('Down arrow was pressed');
+      strokeWidth = Math.abs(strokeWidth - 5);
+      //console.log("strokeWidth = " + strokeWidth);
+
+    }
+    else if(event.keyCode == 190) {
+      //alert('Up arrow was pressed');
+      strokeWidth = Math.abs(strokeWidth + 5);
+      //console.log("strokeWidth = " + strokeWidth);
+    }
+    else if(event.keyCode == 16) {
+      //alert('shift was pressed!');
+              context.clearRect(0, 0, canvas.width, canvas.height);
+        ArrayofX = Array();
+        ArrayofY = Array();
+        strokeWidth = 15;
+    }
+    else if(event.keyCode == 8) {
+        lineColor = '#4444FF';
+       }
+       else if(event.keyCode == 9) {
+        lineColor = '#4455FF';
+       }
+       else if(event.keyCode == 13) {
+        lineColor = '#4466FF';
+       }
+       else if(event.keyCode == 16) {
+        lineColor = '#4477FF';
+       }
+       else if(event.keyCode == 17) {
+        lineColor = '#4488FF';
+       }
+       else if(event.keyCode == 18) {
+        lineColor = '#4499FF';
+       }
+       else if(event.keyCode == 20) {
+        lineColor = '#44AAFF';
+       }
+       else if(event.keyCode == 27) {
+        lineColor = '#44BBFF';
+       }
+       else if(event.keyCode == 33) {
+        lineColor = '#44CCFF';
+       }
+       else if(event.keyCode == 34) {
+        lineColor = '#FFAAFF';
+       }
+       else if(event.keyCode == 35) {
+        lineColor = '#FFBBFF';
+       }
+       else if(event.keyCode == 36) {
+        lineColor = '#FFCCFF';
+       }
+       else if(event.keyCode == 37) {
+        lineColor = '#FFDDFF';
+       }
+       else if(event.keyCode == 39) {
+        lineColor = '#FFFFFF';
+       }
+       else if(event.keyCode == 45) {
+        lineColor = '#1111FF';
+       }
+       else if(event.keyCode == 46) {
+        lineColor = '#1122FF';
+       }
+       else if(event.keyCode == 48) {
+        lineColor = '#1133FF';
+       }
+       else if(event.keyCode == 49) {
+        lineColor = '#1144FF';
+       }
+       else if(event.keyCode == 50) {
+        lineColor = '#1155FF';
+       }
+       else if(event.keyCode == 51) {
+        lineColor = '#1166FF';
+       }
+       else if(event.keyCode == 52) {
+        lineColor = '#1177FF';
+       }
+       else if(event.keyCode == 53) {
+        lineColor = '#1188FF';
+       }
+       else if(event.keyCode == 54) {
+        lineColor = '#1199FF';
+       }
+       else if(event.keyCode == 55) {
+        lineColor = '#11AAFF';
+       }
+       else if(event.keyCode == 56) {
+        lineColor = '#11BBFF';
+       }
+       else if(event.keyCode == 57) {
+        lineColor = '#11CCFF';
+       }
+       else if(event.keyCode == 65) {
+        lineColor = '#11DDFF';
+       }
+       else if(event.keyCode == 66) {
+        lineColor = '#11EEFF';
+       }
+       else if(event.keyCode == 67) {
+        lineColor = '#11FFFF';
+       }
+       else if(event.keyCode == 68) {
+        lineColor = '#22FFFF';
+       }
+       else if(event.keyCode == 69) {
+        lineColor = '#2211FF';
+       }
+       else if(event.keyCode == 70) {
+        lineColor = '#2222FF';
+       }
+       else if(event.keyCode == 71) {
+        lineColor = '#2233FF';
+       }
+       else if(event.keyCode == 72) {
+        lineColor = '#2244FF';
+       }
+       else if(event.keyCode == 73) {
+        lineColor = '#2255FF';
+       }
+       else if(event.keyCode == 74) {
+        lineColor = '#2266FF';
+       }
+       else if(event.keyCode == 75) {
+        lineColor = '#2277FF';
+       }
+       else if(event.keyCode == 76) {
+        lineColor = '#2288FF';
+       }
+       else if(event.keyCode == 77) {
+        lineColor = '#2299FF';
+       }
+       else if(event.keyCode == 78) {
+        lineColor = '#22AAFF';
+       }
+       else if(event.keyCode == 79) {
+        lineColor = '#22BBFF';
+       }
+       else if(event.keyCode == 80) {
+        lineColor = '#22CCFF';
+       }
+       else if(event.keyCode == 81) {
+        lineColor = '#22DDFF';
+       }
+       else if(event.keyCode == 82) {
+        lineColor = '#22EEFF';
+       }
+       else if(event.keyCode == 83) {
+        lineColor = '#22FFFF';
+       }
+       else if(event.keyCode == 84) {
+        lineColor = '#33FFFF';
+       }
+       else if(event.keyCode == 85) {
+        lineColor = '#3311FF';
+       }
+       else if(event.keyCode == 86) {
+        lineColor = '#3322FF';
+       }
+       else if(event.keyCode == 87) {
+        lineColor = '#3333FF';
+       }
+       else if(event.keyCode == 88) {
+        lineColor = '#3344FF';
+       }
+       else if(event.keyCode == 89) {
+        lineColor = '#3355FF';
+       }
+       else if(event.keyCode == 90) {
+        lineColor = '#3366FF';
+       }
+       else if(event.keyCode == 144) {
+        lineColor = '#3377FF';
+       }
+       else if(event.keyCode == 145) {
+        lineColor = '#3388FF';
+       }
+       else if(event.keyCode == 186) {
+        lineColor = '#3399FF';
+       }
+       else if(event.keyCode == 187) {
+        lineColor = '#33AAFF';
+       }
+       //else if(event.keyCode == 188) {
+      //  lineColor = '#33BBFF';
+      // }
+       else if(event.keyCode == 189) {
+        lineColor = '#33CCFF';
+       }
+       //else if(event.keyCode == 190) {
+       // lineColor = '#33DDFF';
+      // }
+       else if(event.keyCode == 191) {
+        lineColor = '#33EEFF';
+       }
+       else if(event.keyCode == 192) {
+        lineColor = '#33FFFF';
+       }
+       else if(event.keyCode == 219) {
+        lineColor = '#44FFFF';
+       }
+       else if(event.keyCode == 220) {
+        lineColor = '#4411FF';
+       }
+       else if(event.keyCode == 221) {
+        lineColor = '#4422FF';
+       }
+       else if(event.keyCode == 222) {
+        lineColor = '#4433FF';
+       }
+ });  
+                    
+      
+      
+    </script>
+
+
+</body>
+</html>
