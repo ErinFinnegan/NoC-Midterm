@@ -1,11 +1,5 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
+// The Nature of Code, Daniel Shiffman http://natureofcode.com
 
-// Particles are generated each cycle through draw(),
-// fall with gravity and fade out over time
-// A ParticleSystem object manages a variable size 
-// list of particles.
 
 // an array of ParticleSystems
 var systems = [];
@@ -13,16 +7,15 @@ var systems = [];
 function setup() {
   var text = createHTML("click to add particle systems");
   text.position(10,365);
-
-  createGraphics(640,360);
+  createGraphics(640,380);
 }
 
 function draw() {
-  background(51);  
   for(var i=0; i<systems.length; i++){
   	systems[i].addParticle();
   	systems[i].run();
   }  
+ // background(255);
 }
 
 function mousePressed() {
