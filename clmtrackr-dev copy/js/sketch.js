@@ -24,5 +24,12 @@ function draw() {
 }
 
 function mousePressed() {
-  systems.push(new ParticleSystem(1, new PVector(mouseX,mouseY)));
+  if (mouthopen == true){
+    systems.push(new ParticleSystem(1, new PVector(mouseX,mouseY)));
+    console.log('mouthopen & mousePressed')
+  }
 }
+
+// function mousePressed() {
+//   systems.push(new ParticleSystem(1, new PVector(mouseX,mouseY)));
+// }
