@@ -66,7 +66,9 @@
           requestAnimationFrame(drawLoop);
           cc.clearRect(0, 0, canvasInput.width, canvasInput.height);
           ctracker.draw(canvasInput);
-          console.log('toplip ' + toplip);
+          //console.log('toplip ' + toplip);
+          //console.log('bottomlip ' + bottomlip);
+          console.log('bottomlip - toplip = ' + (bottomlip - toplip));
         }
         drawLoop();
         console.log('Testing console!!!!!!!');
