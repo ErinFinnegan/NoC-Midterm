@@ -126,6 +126,7 @@
 			<br/>
 			<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
 			<div id="text">
+				<p id="mouthposition"></p>
 				<p>Thanks to <a href="https://github.com/auduno/clmtrackr"><em>clmtrackr</em></a> you can decide what you'd like to vomit today!</p>
 				<p>In Google Chrome, with a computer that supports WebGL.... and allow the page to use your webcam.</p>
 				<div id="nogum" class="nogum">
@@ -136,10 +137,14 @@
 			</div>
 			<a href="https://github.com/ErinFinnegan/NoC-Midterm"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
 			<script>
-				var vid = document.getElementById('videoel');
+				var vid = document.getElementById('videoel');  //was videoInput in the other code
 				var overlay = document.getElementById('overlay');
 				var overlayCC = overlay.getContext('2d');
 				
+		        var toplip = 0.0;  //my additions
+		        var bottomlip = 0.0;  //my addition
+		        var mouthopen = false;  //my addition
+
 				var ctrack = new clm.tracker({useWebGL : true});
 				ctrack.init(pModel);
 				
@@ -211,7 +216,35 @@
 					ctrack.start(vid);
 					// start loop to draw face
 					drawLoop();
+					console.log('Testing console!!!!!!!');
 				}
+
+				function positionLoop() {
+		          requestAnimationFrame(positionLoop);
+		          var positions = ctrack.getCurrentPosition();
+		          // do something with the positions ...
+		          // print the positions
+		          var positionString = "";
+		          if (positions) {
+		            for (var p = 50;p < 61;p++) {
+		              //positionString += "featurepoint "+p+" : ["+positions[p][0].toFixed(2)+","+positions[p][1].toFixed(2)+"]<br/>";
+		               toplip = (positions[60][1]);
+		               bottomlip = (positions[57][1]);
+		            }
+		            if ((bottomlip - toplip) >= 6){
+		              mouthopen = true;
+		              console.log('your mouth is open')
+		              document.getElementById('mouthposition').innerHTML = "mouth is open";
+		            } else {
+		              mouthopen = false;
+		              console.log('your mouth is closed')
+		              document.getElementById('mouthposition').innerHTML = "mouth is closed";
+		            }
+		            positionString =  "mouthopen " + mouthopen;
+		          }
+		        }
+
+		        positionLoop();
 				
 				function drawLoop() {
 					requestAnimFrame(drawLoop);
