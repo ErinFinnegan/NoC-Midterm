@@ -45,9 +45,12 @@
           if (positions) {
             for (var p = 50;p < 61;p++) {
               positionString += "featurepoint "+p+" : ["+positions[p][0].toFixed(2)+","+positions[p][1].toFixed(2)+"]<br/>";
+                console.log('what is positions[60][1] ' + positions[60][1])
+                console.log('what is positions[57][1] ' + positions[57][1])
+                //console.log(positions);
             }
             document.getElementById('positions').innerHTML = positionString;
-            console.log((positions[60])-(positions[57]));  // Not a number!!!
+           // console.log((positions[60])-(positions[57]));  // Not a number!!!
           }
         }
         positionLoop();
