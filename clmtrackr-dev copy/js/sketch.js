@@ -20,14 +20,16 @@ function draw() {
   	systems[i].addParticle();
   	systems[i].run();
   }  
+  if (mouthopen == true){
+    mouthWasOpen();
+  }
  // background(255);
 }
 
-function mousePressed() {
-  if (mouthopen == true){
-    systems.push(new ParticleSystem(1, new PVector(mouseX,mouseY)));
-    console.log('mouthopen & mousePressed')
-  }
+function mouthWasOpen() {
+    systems.push(new ParticleSystem(1, new PVector(toplip,bottomlip)));
+    //console.log('made it to the mouthWasOpen function');
+    console.log('toplip, bottomlip ' + toplip + ',' + bottomlip);
 }
 
 // function mousePressed() {
