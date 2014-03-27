@@ -27,10 +27,11 @@ Particle.prototype.update = function(){
 
 // Method to display
 Particle.prototype.display = function() {
-  stroke(200, this.lifespan);
-  strokeWeight(2);
-  fill(127, this.lifespan);
+  //stroke(200, this.lifespan);
+  //strokeWeight(2);
+  fill(75, 255, 75);
   ellipse(this.position.x, this.position.y, 12, 12);
+  //image(rainbow, this.position.x, this.position.y, 12, 12);
 }
 
  // Is the particle still useful?
