@@ -32,6 +32,9 @@
 			<script>
 				var videoInput = document.getElementById('video');
         
+        var toplip = 0.0;
+        var bottomlip = 0.0;
+
         var ctracker = new clm.tracker();
         ctracker.init(pModel);
         ctracker.start(videoInput);
@@ -45,12 +48,14 @@
           if (positions) {
             for (var p = 50;p < 61;p++) {
               positionString += "featurepoint "+p+" : ["+positions[p][0].toFixed(2)+","+positions[p][1].toFixed(2)+"]<br/>";
-                console.log('what is positions[60][1] ' + positions[60][1])
-                console.log('what is positions[57][1] ' + positions[57][1])
-                //console.log(positions);
+               // console.log('what is positions[60][1] ' + positions[60][1]) //note, this crashes the console pretty quick
+               // console.log('what is positions[57][1] ' + positions[57][1])
+               toplip = (positions[60][1]);
+               bottomlip = (positions[57][1]);
+               
             }
             document.getElementById('positions').innerHTML = positionString;
-           // console.log((positions[60])-(positions[57]));  // Not a number!!!
+           
           }
         }
         positionLoop();
@@ -61,11 +66,13 @@
           requestAnimationFrame(drawLoop);
           cc.clearRect(0, 0, canvasInput.width, canvasInput.height);
           ctracker.draw(canvasInput);
+          console.log('toplip ' + toplip);
         }
         drawLoop();
         console.log('Testing console!!!!!!!');
+        //console.log('toplip, bottomlip = ' + toplip + ' , ' + bottomlip);  //undefined!  Yessss!
 
- 
+        //console.log('toplip type ' + typeof toplip );  
 			</script>
 		</div>
 	</body>
