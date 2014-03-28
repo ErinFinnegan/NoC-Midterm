@@ -27,11 +27,11 @@ function draw() {
 }
 
 function mouthWasOpen() {
-    systems.push(new ParticleSystem(1, new PVector(toplip,bottomlip)));
+    systems.push(new ParticleSystem(1, new PVector(mouthX,bottomlip)));
     //console.log('made it to the mouthWasOpen function');
-    console.log('toplip, bottomlip ' + toplip + ',' + bottomlip);
+    //console.log('mouthX, bottomlip ' + mouthX + ',' + bottomlip);
 }
 
-// function mousePressed() {
-//   systems.push(new ParticleSystem(1, new PVector(mouseX,mouseY)));
-// }
+function mousePressed() {
+  console.log('mouseX, mouthX when clicked' + mouseX + ',' + mouthX);
+}

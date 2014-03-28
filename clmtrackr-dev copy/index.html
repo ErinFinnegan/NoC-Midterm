@@ -144,6 +144,7 @@
 		        var toplip = 0.0;  //my additions
 		        var bottomlip = 0.0;  //my addition
 		        var mouthopen = false;  //my addition
+		        var mouthX = 0.0;
 
 				var ctrack = new clm.tracker({useWebGL : true});
 				ctrack.init(pModel);
@@ -230,6 +231,7 @@
 		              //positionString += "featurepoint "+p+" : ["+positions[p][0].toFixed(2)+","+positions[p][1].toFixed(2)+"]<br/>";
 		               toplip = (positions[60][1]);
 		               bottomlip = (positions[57][1]);
+		               mouthX = (positions[57][0]);
 		            }
 		            if ((bottomlip - toplip) >= 6){
 		              mouthopen = true;
