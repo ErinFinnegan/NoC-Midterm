@@ -41,4 +41,4 @@ var s = function( sketch ) {
 };
 // If its coming from outside the sketch you can use p5.thing, but inside the sketch its sketch.thing
 
-var myp5 = new p5(s, 'p5-canvas');
+var myp5 = new p5(s, 'overlay');
