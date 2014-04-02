@@ -15,7 +15,7 @@
 			}
 			
 			#overlay {
-				position: absolute;
+				/*position: absolute;*/
 				top: 0px;
 				left: 0px;
 				-o-transform : scaleX(-1);
@@ -32,6 +32,7 @@
 				-ms-filter : fliph; /*IE*/
 				filter : fliph; /*IE*/
 			}
+
 			
 			#container {
 				position : relative;
@@ -115,13 +116,16 @@
 		<script src="../js/Stats.js"></script>
 		<div id="content">
 			<h2>What Would You Like to Puke Today?</h2>
+
+
 			<div id="container">
-				<video id="videoel" width="400" height="300" preload="auto" loop>
-					<!--<video id="videoel" width="320" height="240" preload="auto">-->
-					<!--<source src="./media/franck.ogv" type="video/ogg"/>-->
-				</video>
-				<canvas id="p5-canvas" width="400" height="300"></canvas>
-				<!--<canvas id="sketch" width="400" height="300"></canvas>-->
+			<canvas id="videoel" width="400" height="300"></canvas>
+					<video id="videoel" width="400" height="300" preload="auto" loop>
+						<!--<video id="videoel" width="320" height="240" preload="auto">-->
+						<!--<source src="./media/franck.ogv" type="video/ogg"/>-->
+					</video>
+			
+			<!--<canvas id="sketch" width="400" height="300"></canvas>-->
 			</div>
 			<br/>
 			<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
@@ -138,7 +142,7 @@
 			<a href="https://github.com/ErinFinnegan/NoC-Midterm"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
 			<script>
 				var vid = document.getElementById('videoel');  //was videoInput in the other code
-				var overlay = document.getElementById('p5-canvas');
+				var overlay = document.getElementById('overlay');
 				var overlayCC = overlay.getContext('2d');
 				
 		        var toplip = 0.0;  //my additions
@@ -153,6 +157,7 @@
 				stats.domElement.style.position = 'absolute';
 				stats.domElement.style.top = '0px';
 				document.getElementById('container').appendChild( stats.domElement );
+			// maybe this child appending thing is key?
 				
 				function enablestart() {
 					var startbutton = document.getElementById('startbutton');
