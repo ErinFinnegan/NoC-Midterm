@@ -40,10 +40,13 @@
 			}
 			
 			#content {
+				-webkit-column-count:2; /* Chrome, Safari, Opera */
+				-moz-column-count:2; /* Firefox */
+				column-count:2;
 				margin-top : 70px;
 				margin-left : 100px;
 				margin-right : 100px;
-				max-width: 950px;
+				/*max-width: 950px;*/
 			}
 			
 			#sketch {
@@ -73,6 +76,12 @@
 
 			.nohide {
 				display : block;
+			}
+
+			br {
+				-webkit-break-after: always;
+	            -moz-break-after: always;
+	            break-after: always;
 			}
 		</style>
 		<script type="text/javascript">
@@ -122,6 +131,10 @@
 				</video>
 				<canvas id="p5-canvas" width="400" height="300"></canvas>
 				<!--<canvas id="sketch" width="400" height="300"></canvas>-->
+				<br>
+				<img src = "styles/candy.png">
+				<img src = "styles/quarter.png">
+				<img src = "styles/rainbow.png"> 
 			</div>
 			<br/>
 			<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
