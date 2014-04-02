@@ -4,6 +4,7 @@
 // an array of ParticleSystems
 var systems = [];
 var rainbow;
+var mouthopen;
 
 function setup() {
   //var text = createHTML("click to add particle systems");
@@ -13,6 +14,7 @@ function setup() {
   canvas.class("puke");   //I am not sure what the .class part does
   //canvas.style("position : relative;");  //this didn't work
   rainbow = loadImage("../styles/rainbow.png");
+  mouthopen == false;
 }
 
 function draw() {
@@ -27,9 +29,11 @@ function draw() {
 }
 
 function mouthWasOpen() {
-    systems.push(new ParticleSystem(1, new PVector((mouthX*.5),bottomlip)));
+    //map(value, start1, stop1, start2, stop2)
+    var newbottomlip = map(bottomlip, 190, 285, 0, 400);
+    systems.push(new ParticleSystem(1, new PVector((mouthX),newbottomlip)));
     //console.log('made it to the mouthWasOpen function');
-    //console.log('toplip, bottomlip ' + toplip + ',' + bottomlip);
+    console.log('newbottomlip ' + bottomlip);
 }
 
 function mousePressed() {
