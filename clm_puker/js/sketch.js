@@ -1,38 +1,41 @@
-// The Nature of Code, Daniel Shiffman http://natureofcode.com
+//Particles from the Nature of Code, Daniel Shiffman http://natureofcode.com
 
+var s = function(sketch) {
+  // an array of ParticleSystems
+  var systems = [];
+  var rainbow;
 
-// an array of ParticleSystems
-var systems = [];
-var rainbow;
-
-function setup() {
-  //var text = createHTML("click to add particle systems");
-  //text.position(10,365);
-  canvas = createCanvas(400, 300);
-  canvas.position(160, 125);
-  canvas.class("puke");   //I am not sure what the .class part does
-  //canvas.style("position : relative;");  //this didn't work
-  rainbow = loadImage("./styles/rainbow.png");
-}
-
-function draw() {
-  for(var i=0; i<systems.length; i++){
-  	systems[i].addParticle();
-  	systems[i].run();
-  }  
-  if (mouthopen == true){
-    mouthWasOpen();
+  sketch.setup = function() {
+    //var text = createHTML("click to add particle systems");
+    //text.position(10,365);
+    //sketch.createCanvas(400, 300);
+    //canvas.position(160, 125);
+    //sketch.canvas.class("puke"); //I am not sure what the .class part does
+    //canvas.style("position : relative;");  //this didn't work
+    sketch.loadImage("./styles/rainbow.png");
   }
- // background(255);
-}
 
-function mouthWasOpen() {
-    systems.push(new ParticleSystem(1, new PVector((mouthX*.5),bottomlip)));
+  sketch.draw = function() {
+    for (var i = 0; i < systems.length; i++) {
+      systems[i].addParticle();
+      systems[i].run();
+    }
+    if (mouthopen == true) {
+      mouthWasOpen();
+    }
+    // background(255);
+  }
+
+  sketch.mouthWasOpen = function() {
+    sketch.systems.push(new ParticleSystem(1, new PVector((mouthX * .5), bottomlip)));
     //console.log('made it to the mouthWasOpen function');
     //console.log('toplip, bottomlip ' + toplip + ',' + bottomlip);
-}
+  }
 
-function mousePressed() {
-  console.log("mouse pressed!");
-  console.log('mouseX, mouthX when clicked' + mouseX + ',' + mouthX);
-}
+  sketch.mousePressed = function() {
+    sketch.console.log("mouse pressed!");
+    sketch.console.log('mouseX, mouthX when clicked' + mouseX + ',' + mouthX);
+  }
+};
+// was p5-canvas
+var myp5 = new p5(s, 'overlay');
