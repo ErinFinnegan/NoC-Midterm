@@ -149,7 +149,7 @@
 			<script>
 				var vid = document.getElementById('videoel');  //was videoInput in the other code
 				var overlay = document.getElementById('p5-canvas');
-				var overlayCC = overlay.getContext('2d');
+				//var overlayCC = overlay.getContext('2d');
 				
 		        var toplip = 0.0;  //my additions
 		        var bottomlip = 0.0;  //my addition
@@ -226,7 +226,7 @@
 					// start tracking
 					ctrack.start(vid);
 					// start loop to draw face
-					drawLoop();
+					//drawLoop();
 					console.log('Testing console!!!!!!!');
 				}
 
@@ -263,7 +263,8 @@
 					overlayCC.clearRect(0, 0, 400, 300);
 					//psrElement.innerHTML = "score :" + ctrack.getScore().toFixed(4);
 					if (ctrack.getCurrentPosition()) {
-						ctrack.draw(overlay);
+						//ctrack.draw(overlay);
+						console.log('still tracking the overlay - this is the draw loop');
 					}
 				}
 				
