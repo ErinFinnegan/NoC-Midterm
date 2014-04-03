@@ -12,6 +12,9 @@
 				background-color: #f0f0f0;
 				margin: 0px auto;
 				max-width: 1150px;
+				-webkit-column-count:2; /* Chrome, Safari, Opera */
+				-moz-column-count:2; /* Firefox */
+				column-count:2;
 			}
 			
 			#overlay {
@@ -40,12 +43,10 @@
 			}
 			
 			#content {
-				-webkit-column-count:2; /* Chrome, Safari, Opera */
-				-moz-column-count:2; /* Firefox */
-				column-count:2;
 				margin-top : 70px;
 				margin-left : 100px;
 				margin-right : 100px;
+				column-span: all;
 				/*max-width: 950px;*/
 			}
 			
@@ -78,7 +79,8 @@
 				display : block;
 			}
 
-			br {
+			hr {
+				column-span: all;
 				-webkit-break-after: always;
 	            -moz-break-after: always;
 	            break-after: always;
@@ -131,12 +133,7 @@
 				</video>
 				<canvas id="p5-canvas" width="400" height="300"></canvas>
 				<!--<canvas id="sketch" width="400" height="300"></canvas>-->
-				<br>
-				<img src = "styles/candy.png">
-				<img src = "styles/quarter.png">
-				<img src = "styles/rainbow.png"> 
-			</div>
-			<br/>
+				</div>
 			<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
 			<div id="text">
 				<p id="mouthposition"></p>
@@ -278,4 +275,11 @@
 			</script>
 		</div>
 	</body>
+			<hr>
+				<br>
+				<img src = "styles/candy.png">
+				<br>
+				<img src = "styles/quarter.png">
+				<br>
+				<img src = "styles/rainbow.png"> 
 </html>
