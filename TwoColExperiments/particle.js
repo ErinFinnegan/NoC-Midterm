@@ -27,8 +27,14 @@ Particle.prototype.update = function(){
 
 // Method to display
 Particle.prototype.display = function() {
+  var whichpuke;
   myp5.fill(75, 255, 75);
-  myp5.image(rainbow, this.position.x, this.position.y, 12, 12);
+  if (myp5.mouseIsPressed() == true){
+    whichpuke = money;      
+  } else {
+   whichpuke = rainbow;  
+ }
+  myp5.image(whichpuke, this.position.x, this.position.y, 50, 50);  
 }
 
  // Is the particle still useful?

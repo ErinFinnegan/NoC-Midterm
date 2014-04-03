@@ -1,6 +1,8 @@
 // The Nature of Code, Daniel Shiffman http://natureofcode.com
 
 var rainbow;
+var money;
+var candy;
 
 var s = function( sketch ) {
 
@@ -21,6 +23,8 @@ var s = function( sketch ) {
     canvas.class("puke");   //I am not sure what the .class part does
     //canvas.style("position : relative;");  //this didn't work
     rainbow = sketch.loadImage("styles/rainbow.png");
+    money = sketch.loadImage("styles/quarter.png");
+    candy = sketch.loadImage("styles/candy.png");
   }
 
   sketch.draw = function() {
