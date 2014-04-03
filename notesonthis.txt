@@ -1,0 +1,10 @@
+165 to 206
+
+192 to 283
+
+mousePressed()
+mouseIsPressed() - mousePressed is now mouseIsPressed(). isMousePressed() has been deprecated.
+
+--- email experts
+
+--- how to stop particles; while loop?
