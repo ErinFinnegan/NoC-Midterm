@@ -85,6 +85,47 @@
 	            -moz-break-after: always;
 	            break-after: always;
 			}
+
+			/*BUTTON STYLING*/
+			.buttonContainer{
+				position: fixed;
+				margin-right: 100px;
+				/*z-index: 100px;*/
+			}
+			.button{
+				width: 200px;
+				height: 200px;
+				border-style: solid;
+				border-width: 4px;
+				border-color: black;
+				/*text-align: center;*/
+				/*padding: 10px;*/
+				/*margin: 10px;*/
+				/*color: white; text-shadow: black 0.1em 0.1em 0.2em;*/
+				/*background-image:url('button01BG.jpg');*/
+			}
+
+			#buttonOne{
+				background-image:url('styles/quarter.png');
+				background-repeat: 1;
+				background-size: auto;
+			}
+
+			#buttonTwo{
+				background-image:url('styles/rainbow.png');
+				background-repeat: 1;
+				background-size: 150px;
+			}
+
+			#buttonThree{
+				background-image:url('styles/candy.png');
+				background-repeat: 1;
+				background-size: auto;
+				background-size: 150px;
+			}
+
+
+
 		</style>
 		<script type="text/javascript">
 
@@ -106,6 +147,7 @@
 	  <script language="javascript" type="text/javascript" src="particle_system.js"></script>
 	  <script language="javascript" type="text/javascript" src="sketch.js"></script>
 	  <script language="javascript" type="text/javascript" src="particle.js"></script>
+	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	</head>
 	<body>
 		<script src="js/utils.js"></script>
@@ -226,7 +268,7 @@
 					ctrack.start(vid);
 					// start loop to draw face
 					drawLoop();
-					console.log('Testing console!!!!!!!');
+					console.log('Video Start was clicked!!!!!!!');
 				}
 
 				function positionLoop() {
@@ -271,15 +313,50 @@
 				document.addEventListener('clmtrackrIteration', function(event) {
 					stats.update();
 				}, false);
-				
+
 			</script>
-		</div>
-	</body>
-			<hr>
-				<br>
-				<img src = "styles/candy.png">
-				<br>
-				<img src = "styles/quarter.png">
-				<br>
-				<img src = "styles/rainbow.png"> 
+			<script>
+				function testButton(){
+					var value;
+					console.log("Clicked a button " + value);
+				}
+
+					// $( document ).ready( function(){
+			 
+					// 		console.log("Jquery loaded");
+
+
+					// 	$('#buttonOne').click(function(){
+					// 			console.log("We clicked Button One!");
+					// 		});
+			 
+					// 		$('#buttonTwo').click(function(){
+					// 			console.log("We clicked Button Two!");
+					// 		});
+			 
+					// 		$('#buttonThree').click(function(){
+					// 			console.log("We clicked Button Three!");
+					// 		});
+					// 	});
+
+			</script>
+		
+			<p><input type=image src="styles/quarter.png" alt="what kind of money" onclick="testButton()" value="money">
+			<p><input type=image src="styles/candy.png" alt="what kind of candy" onclick="testButton()" value="candy">
+			<p><input type=image src="styles/rainbow.png" alt="what kind of rainbow" onclick="testButton()" value="rainbow">
+			<p><input type=image src="styles/puke.png" alt="what kind of sandwich" onclick="testButton()" value="puke">
+
+			<!-- <button type="submit" name="quarter" value="money"><img src="styles/quarter.png" alt="SomeAlternateText"></button> -->
+				<!-- <img src="styles/quarter.png"> -->
+
+				<!-- <div class="buttonContainer"> -->
+				<!-- <div class="button" id="buttonOne"></div> <!--non working button -->
+				<!-- <div class="button" id="buttonTwo"></div> <!--non working button --> 
+				<!-- <div class="button" id="buttonThree"></div> <!--non working button -->
+				<!-- <img src="styles/quarter.png" class="img-responsive" alt="Responsive image"> -->
+				<!-- <img src="styles/candy.png" class="img-responsive" alt="Responsive image"> -->
+				<!-- <img src="styles/rainbow.png" class="img-responsive" alt="Responsive image"> -->
+		  </div>
+		</body>
+
 </html>

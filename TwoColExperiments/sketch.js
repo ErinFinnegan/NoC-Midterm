@@ -3,6 +3,7 @@
 var rainbow;
 var money;
 var candy;
+var whichpuke;
 
 var s = function( sketch ) {
 
