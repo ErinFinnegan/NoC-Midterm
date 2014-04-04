@@ -32,7 +32,7 @@ var s = function( sketch ) {
     	systems[i].addParticle();
     	systems[i].run();
     }  
-    if (mouthopen == true){
+    if (mouthopen == true){  //changed the if to a while, made no difference
       mouthWasOpen();
     }
    // background(255);
@@ -40,7 +40,7 @@ var s = function( sketch ) {
 
   sketch.mousePressed = function() {
     console.log("mouse pressed!");
-    console.log('mouseX, mouthX when clicked' + sketch.mouseX + ',' + sketch.mouthX);
+    //console.log('mouseX, mouthX when clicked' + sketch.mouseX + ',' + sketch.mouthX);
   }
 };
 // If its coming from outside the sketch you can use p5.thing, but inside the sketch its sketch.thing
