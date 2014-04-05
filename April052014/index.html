@@ -86,43 +86,6 @@
 	            break-after: always;
 			}
 
-			/*BUTTON STYLING*/
-			.buttonContainer{
-				position: fixed;
-				margin-right: 100px;
-				/*z-index: 100px;*/
-			}
-			.button{
-				width: 200px;
-				height: 200px;
-				border-style: solid;
-				border-width: 4px;
-				border-color: black;
-				/*text-align: center;*/
-				/*padding: 10px;*/
-				/*margin: 10px;*/
-				/*color: white; text-shadow: black 0.1em 0.1em 0.2em;*/
-				/*background-image:url('button01BG.jpg');*/
-			}
-
-			#buttonOne{
-				background-image:url('styles/quarter.png');
-				background-repeat: 1;
-				background-size: auto;
-			}
-
-			#buttonTwo{
-				background-image:url('styles/rainbow.png');
-				background-repeat: 1;
-				background-size: 150px;
-			}
-
-			#buttonThree{
-				background-image:url('styles/candy.png');
-				background-repeat: 1;
-				background-size: auto;
-				background-size: 150px;
-			}
 
 
 
@@ -173,6 +136,7 @@
 					<!--<source src="./media/franck.ogv" type="video/ogg"/>-->
 				</video>
 				<canvas id="p5-canvas" width="400" height="300"></canvas>
+				<canvas id="overlay" width="400" height="300"></canvas>
 				<!--<canvas id="sketch" width="400" height="300"></canvas>-->
 				</div>
 			<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>

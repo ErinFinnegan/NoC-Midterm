@@ -4,7 +4,7 @@ var rainbow;
 var money;
 var candy;
 var whichpuke;
-var puke;
+//var puke;
 
 var s = function( sketch ) {
 
@@ -20,9 +20,9 @@ var s = function( sketch ) {
   sketch.setup = function() {
     //var text = createHTML("click to add particle systems");
     //text.position(10,365);
-    canvas = sketch.createCanvas(400, 300);
-    canvas.position(160, 125);
-    canvas.class("puke");   //I am not sure what the .class part does
+    myp5.canvas = sketch.createCanvas(400, 300);
+    myp5.canvas.position(160, 125);
+    myp5.canvas.class("puke");   //I am not sure what the .class part does
     //canvas.style("position : relative;");  //this didn't work
     rainbow = sketch.loadImage("styles/rainbow.png");
     money = sketch.loadImage("styles/quarter.png");
@@ -44,4 +44,4 @@ var s = function( sketch ) {
 };
 // If its coming from outside the sketch you can use p5.thing, but inside the sketch its sketch.thing
 
-var myp5 = new p5(s, 'overlay');
+var myp5 = new p5(s, 'p5-canvas');
