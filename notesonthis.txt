@@ -8,3 +8,5 @@ mouseIsPressed() - mousePressed is now mouseIsPressed(). isMousePressed() has be
 --- email experts
 
 --- how to stop particles; while loop?
+
+-- champagne fountain
