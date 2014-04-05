@@ -1,12 +1,15 @@
 // The Nature of Code, Daniel Shiffman http://natureofcode.com
 
-var rainbow;
-var money;
-var candy;
-var whichpuke;
-//var puke;
 
-var s = function( sketch ) {
+
+  var rainbow;
+  var money;
+  var candy;
+  var whichpuke;
+  //var puke;
+
+  var s = function( sketch ) {
+  
 
   // an array of ParticleSystems
   var systems = [];
@@ -28,6 +31,7 @@ var s = function( sketch ) {
     money = sketch.loadImage("styles/quarter.png");
     candy = sketch.loadImage("styles/candy.png");
     puke = sketch.loadImage("styles/puke.png");
+    whichpuke =  rainbow;
   }
 
   sketch.draw = function() {

@@ -23,12 +23,9 @@ Particle.prototype.update = function(){
 
 // Method to display
 Particle.prototype.display = function() {
-  var whichpuke;
-  whichpuke = vomit;
+  //var whichpuke = vomit;
   myp5.fill(75, 255, 75);
-
   myp5.image(whichpuke, this.position.x, this.position.y, 50, 50);
-  myp5.console.log("whichpuke = " + whichpuke); 
 }
 
  // Is the particle still useful?
