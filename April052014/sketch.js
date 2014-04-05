@@ -11,7 +11,7 @@ var s = function( sketch ) {
   // an array of ParticleSystems
   var systems = [];
   
-  var mouthWasOpen = function() {
+  sketch.mouthWasOpen = function() {
       systems.push(new ParticleSystem(1, new PVector((mouthX*.5),bottomlip)));
       //console.log('made it to the mouthWasOpen function');
       //console.log('toplip, bottomlip ' + toplip + ',' + bottomlip);
@@ -36,7 +36,7 @@ var s = function( sketch ) {
     	systems[i].run();
     }  
     if (mouthopen == true){  //changed the if to a while, made no difference
-      mouthWasOpen();
+      sketch.mouthWasOpen();
     }
    // background(255);
   }
@@ -44,4 +44,4 @@ var s = function( sketch ) {
 };
 // If its coming from outside the sketch you can use p5.thing, but inside the sketch its sketch.thing
 
-var myp5 = new p5(s, 'p5-canvas');
+var myp5 = new p5(s, 'p5canvas');

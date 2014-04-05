@@ -1,10 +1,6 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
+// The Nature of Code by Daniel Shiffman http://natureofcode.com
 
-// Simple Particle System
-
-// A simple Particle class
+// Simple Particle System - a simple Particle class
 
 function Particle(position) {
   this.acceleration = new PVector(0, 0.05);

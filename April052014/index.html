@@ -104,9 +104,8 @@
 
 		</script>
 	<!-- NOC_4_04_SystemofSystems -->
-	<!--script language="javascript" type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.2.2/p5.min.js"></script-->
-	<script language="javascript" type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.2.2/p5.min.js"></script>
-	  
+	<!--<script language="javascript" type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.2.2/p5.min.js"></script>-->
+	  <script language="javascript" type="text/javascript" src="js/p5.js"></script>
 	  <script language="javascript" type="text/javascript" src="particle_system.js"></script>
 	  <script language="javascript" type="text/javascript" src="sketch.js"></script>
 	  <script language="javascript" type="text/javascript" src="particle.js"></script>
@@ -135,7 +134,7 @@
 					<!--<video id="videoel" width="320" height="240" preload="auto">-->
 					<!--<source src="./media/franck.ogv" type="video/ogg"/>-->
 				</video>
-				<canvas id="p5-canvas" width="400" height="300"></canvas>
+				<canvas id="p5canvas" width="400" height="300"></canvas>
 				<canvas id="overlay" width="400" height="300"></canvas>
 				<!--<canvas id="sketch" width="400" height="300"></canvas>-->
 				</div>
@@ -153,7 +152,8 @@
 			<a href="https://github.com/ErinFinnegan/NoC-Midterm"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
 			<script>
 				var vid = document.getElementById('videoel');  //was videoInput in the other code
-				var overlay = document.getElementById('p5-canvas');
+				var overlay = document.getElementById('overlay');
+				var p5canvas = document.getElementById('p5canvas');
 				var overlayCC = overlay.getContext('2d');
 				
 		        var toplip = 0.0;  //my additions
@@ -270,6 +270,7 @@
 					//psrElement.innerHTML = "score :" + ctrack.getScore().toFixed(4);
 					if (ctrack.getCurrentPosition()) {
 						ctrack.draw(overlay);
+						//ctrack.draw(p5canvas);
 						//console.log('still tracking the overlay - this is the draw loop');
 						//console.log('value = ' + value);
 					}
