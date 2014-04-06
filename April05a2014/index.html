@@ -162,6 +162,7 @@
 				var vid = document.getElementById('videoel');  //was videoInput in the other code
 				var overlay = document.getElementById('overlay');
 				var p5canvas = document.getElementById('p5canvas');
+				console.log(p5canvas);
 				var overlayCC = overlay.getContext('2d');
 				
 		        var toplip = 0.0;  //my additions
@@ -291,8 +292,10 @@
 
 			</script>
 			<script>
-				function testButton(vomit){
-					console.log("Clicked a button " + vomit);
+				function testButton(picture){
+					console.log("Clicked a button " + picture);
+					console.log(myp5);
+					myp5.setPicture(picture);
 				}
 
 

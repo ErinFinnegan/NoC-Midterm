@@ -24,8 +24,8 @@
     //var text = createHTML("click to add particle systems");
     //text.position(10,365);
     myp5.canvas = sketch.createCanvas(400, 300);
-    myp5.canvas.position(160, 125);
-    myp5.canvas.class("puke");   //I am not sure what the .class part does
+    //myp5.canvas.position(160, 125);
+    myp5.canvas.class("p5canvas");   //references the HTML
     //canvas.style("position : relative;");  //this didn't work
     rainbow = sketch.loadImage("styles/rainbow.png");
     money = sketch.loadImage("styles/quarter.png");

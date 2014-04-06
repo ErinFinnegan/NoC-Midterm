@@ -2,12 +2,13 @@
 // Daniel Shiffman
 // http://natureofcode.com
 
-function ParticleSystem(num, position){	
+function ParticleSystem(picture, num, position){	
 	this.origin = position.get();
 	this.particles = [];
+  console.log("I'm about to make another particle" + picture);
   for (var i = 0; i < num; i++) {
-      this.particles.push(new Particle(this.origin));    // Add "num" amount of particles to the arraylist
-    }
+      this.particles.push(new Particle(this.origin, picture));    // Add "num" amount of particles to the arraylist
+  }
 }
 
 ParticleSystem.prototype.addParticle = function(){

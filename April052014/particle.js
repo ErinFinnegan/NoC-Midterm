@@ -1,7 +1,7 @@
 // The Nature of Code by Daniel Shiffman http://natureofcode.com
 
 // Simple Particle System - a simple Particle class
-
+var log = false;
 function Particle(position) {
   this.acceleration = new PVector(0, 0.05);
   this.velocity = new PVector(myp5.random(-1, 1), myp5.random(-1, 0));
@@ -25,6 +25,10 @@ Particle.prototype.update = function(){
 Particle.prototype.display = function() {
   //var whichpuke = vomit;
   myp5.fill(75, 255, 75);
+  if(!log){
+    console.log(whichpuke);
+    log = true;
+  }
   myp5.image(whichpuke, this.position.x, this.position.y, 50, 50);
 }
 
