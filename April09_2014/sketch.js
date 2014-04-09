@@ -17,7 +17,7 @@
     var systems = [];
   
   sketch.mouthWasOpen = function(picture) {
-    console.log("I'm about to make a ParticleSystem with this picture" + picture );
+    //console.log("I'm about to make a ParticleSystem with this picture" + picture );
       systems.push(new ParticleSystem(picture, 1, new PVector((mouthX*.5),bottomlip)));
       //console.log('made it to the mouthWasOpen function');
       //console.log('toplip, bottomlip ' + toplip + ',' + bottomlip);
@@ -32,12 +32,12 @@
     //canvas.style("position : relative;");  //this didn't work
     sketch.currentPicture = null;
     sketch.picImage = {};
-    sketch.picImage.rainbow = sketch.loadImage("styles/rainbow.png");
+    //sketch.picImage.rainbow = sketch.loadImage("styles/rainbow.png");
     sketch.picImage.money = sketch.loadImage("styles/quarter.png");
     sketch.picImage.candy = sketch.loadImage("styles/candy.png");
     sketch.picImage.puke = sketch.loadImage("styles/puke.png");
-    sketch.currentPicture = sketch.picImage.rainbow;
-    console.log("picImage " + sketch.picImage);
+    sketch.currentPicture = sketch.picImage.money;
+    //console.log("picImage " + sketch.picImage);
   }
 
   sketch.draw = function() {
@@ -46,8 +46,8 @@
     	systems[i].run();
     }  
     if (mouthopen == true){  //changed the if to a while, made no difference
-      console.log("I'm about to say mouth open:");
-      console.log(sketch.currentPicture);
+      //console.log("I'm about to say mouth open:");
+      //console.log(sketch.currentPicture);
       sketch.mouthWasOpen(sketch.currentPicture);
     }
   //myp5.background(255);

@@ -5,9 +5,9 @@
 function ParticleSystem(picture, num, position){	
 	this.origin = position.get();
 	this.particles = [];
-  console.log("I'm about to make another particle" + picture);
+  // console.log("I'm about to make another particle" + picture);
   for (var i = 0; i < num; i++) {
-      this.particles.push(new Particle(this.origin, picture));    // Add "num" amount of particles to the arraylist
+      this.particles.push(new Particle(this.origin, money));    // Add "num" amount of particles to the arraylist
   }
 }
 
