@@ -167,8 +167,8 @@
 		        var toplip = 0.0;  //my additions
 		        var bottomlip = 0.0;  //my addition
 		        var mouthopen = false;  //my addition
-		        var mouthX = 0.0;
-		        //var vomit = whichpuke;
+		        var mouthX = 0.0;   //my addition
+		        var whichpuke = "mydefault";   //my addition
 
 				var ctrack = new clm.tracker({useWebGL : true});
 				ctrack.init(pModel);
@@ -291,17 +291,20 @@
 
 			</script>
 			<script>
-				function testButton(vomit){
-					console.log("Clicked a button " + vomit);
-				}
-
+			var mydefault = "mydefault";
+			function changePuke(mydefault){
+				whichpuke = mydefault;
+    			console.log("whichpuke in the changePuke function  = " + whichpuke);
+    			console.log("mydefault  = " + mydefault);
+  				};
 
 			</script>
 		
-			<p><input type=image src="styles/moneybutton.png" alt="what kind of money" onclick="testButton('money')" value="money"><h2>Money</h2>
-			<p><input type=image src="styles/candy.png" alt="what kind of candy" onclick="testButton('candy')" value="candy"><h2>Candy</h2>
-			<p><input type=image src="styles/rainbow.png" alt="what kind of rainbow" onclick="testButton('rainbow')" value="rainbow"><h2>Rainbows</h2>
-			<p><input type=image src="styles/pukebutton.png" alt="what kind of sandwich" onclick="testButton('puke')" value="puke"><h2>Actual Puke</h2>
+			<p><input type=image src="styles/moneybutton.png" alt="what kind of money" onclick="changePuke('money')" value="money"><h2>Money</h2>
+			<p><input type=image src="styles/candy.png" alt="what kind of candy" onclick="changePuke('candy')" value="candy"><h2>Candy</h2>
+			<p><input type=image src="styles/rainbow.png" alt="what kind of rainbow" onclick="changePuke('rainbow')" value="rainbow"><h2>Rainbows</h2>
+			<p><input type=image src="styles/pukebutton.png" alt="what kind of sandwich" onclick="changePuke('puke')" value="puke"><h2>Actual Puke</h2>
+	
 
 			
 		  </div>

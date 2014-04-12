@@ -6,8 +6,9 @@
   var money;
   var candy;
   var whichpuke;
-  //var puke;
-
+  var mySketch;
+  var mydefault = "mydefault";
+  
   var s = function( sketch ) {
   
 
@@ -21,17 +22,15 @@
   }
 
   sketch.setup = function() {
-    //var text = createHTML("click to add particle systems");
-    //text.position(10,365);
+    mydefault = myp5.ellipse;
     myp5.canvas = sketch.createCanvas(400, 300);
     //myp5.canvas.position(160, 125);
     myp5.canvas.class("p5canvas");   //references the HTML
-    //canvas.style("position : relative;");  //this didn't work
-    //candy = sketch.loadImage("styles/rainbow.png");
     money = sketch.loadImage("styles/quarter.png");
     candy = sketch.loadImage("styles/candy.png");
-    rainbow = sketch.loadImage("styles/puke.png");
-    whichpuke =  rainbow;
+    rainbow = sketch.loadImage("styles/rainbow.png");
+    whichpuke =  "mydefault";
+    console.log("whichpuke in the setup  = " + whichpuke);
   }
 
   sketch.draw = function() {
@@ -44,7 +43,8 @@
     }
    // background(255);
   }
-
+ mySketch = sketch;
+ console.log("whichpuke post mySketch call = " + whichpuke);
 };
 // If its coming from outside the sketch you can use p5.thing, but inside the sketch its sketch.thing
 

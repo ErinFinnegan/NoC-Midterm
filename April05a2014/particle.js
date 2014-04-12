@@ -30,7 +30,11 @@ Particle.prototype.display = function() {
   myp5.fill(75, 255, 75);
   // console.log("I'm about to draw" + this.picture);
   // console.log("I'm drawing image now " + this.picture);
-  myp5.image(mySketch.picImage.rainbow, this.position.x, this.position.y, 50, 50);
+  if( ){
+    myp5.image(mySketch.picImage.rainbow, this.position.x, this.position.y, 50, 50);
+  } else {
+    myp5.ellipse(this.position.x, this.position.y, 12, 12);
+  }
 }
 
 Particle.prototype.setPicture = function(pic) {

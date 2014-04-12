@@ -30,7 +30,13 @@ Particle.prototype.display = function() {
     console.log(whichpuke);
     log = true;
   }
-  myp5.image(whichpuke, this.position.x, this.position.y, 50, 50);
+  if( whichpuke = mydefault ){
+    myp5.ellipse(this.position.x, this.position.y, 12, 12);
+    //console.log("whichpuke should equal ellipse here  = " + whichpuke);
+   } else {
+   myp5.image(mySketch.picImage.whichpuke, this.position.x, this.position.y, 50, 50);
+   console.log("whichpuke should be an image here  = " + whichpuke);
+   }
 }
 
  // Is the particle still useful?
