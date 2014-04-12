@@ -25,18 +25,18 @@ Particle.prototype.update = function(){
 Particle.prototype.display = function() {
   //var whichpuke = vomit;
   myp5.fill(75, 255, 75);
-  if(!log){
-    console.log("whichpuke =");
-    console.log(whichpuke);
-    log = true;
-  }
-  if( whichpuke = mydefault ){
-    myp5.ellipse(this.position.x, this.position.y, 12, 12);
-    //console.log("whichpuke should equal ellipse here  = " + whichpuke);
-   } else {
+  // if(!log){
+  //   console.log("whichpuke =");
+  //   console.log(whichpuke);
+  //   log = true;
+  // }
+  // if( whichpuke = mydefault ){
+  //   myp5.ellipse(this.position.x, this.position.y, 12, 12);
+  //   //console.log("whichpuke should equal ellipse here  = " + whichpuke);
+  //  } else {
    myp5.image(mySketch.picImage.whichpuke, this.position.x, this.position.y, 50, 50);
    console.log("whichpuke should be an image here  = " + whichpuke);
-   }
+   //}
 }
 
  // Is the particle still useful?

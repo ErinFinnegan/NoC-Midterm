@@ -11,4 +11,3 @@ mouseIsPressed() - mousePressed is now mouseIsPressed(). isMousePressed() has be
 
 -- champagne fountain
 
- prokaryotes 

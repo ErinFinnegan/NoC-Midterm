@@ -29,6 +29,7 @@
     money = sketch.loadImage("styles/quarter.png");
     candy = sketch.loadImage("styles/candy.png");
     rainbow = sketch.loadImage("styles/rainbow.png");
+    puke = sketch.loadImage("styles/puke.png");
     whichpuke =  "mydefault";
     console.log("whichpuke in the setup  = " + whichpuke);
   }
