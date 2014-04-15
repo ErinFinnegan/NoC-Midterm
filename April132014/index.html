@@ -291,26 +291,26 @@
 
 			</script>
 			<script>
-			puke = new Image();
-			candy = new Image();
-			rainbow = new Image();
-			money  = new Image();
-			money.src = "styles/quarter.png"
-			candy.src = "styles/candy.png"
-			puke.src = "styles/rainbow.png"
-			var mydefault = "mydefault";
-			function changePuke(mydefault){
-				whichpuke = mydefault;
-    			console.log("whichpuke in the changePuke function  = " + whichpuke);
-    			console.log("mydefault  = " + mydefault);
+			money = "styles/quarter.png"
+			candy = "styles/candy.png"
+			rainbow = "styles/rainbow.png"
+			puke = "styles/puke.png"
+			//var mydefault = rainbow;
+			function changePuke(imageid){
+				//whichpuke = mydefault;
+			    //onclick change the source of the image
+				document.getElementById("imageid").src="styles/rainbow.png";
+    			console.log("imageid in the changePuke function  = " + imageid);
   				};
 
 			</script>
+
+			<img src="styles/rainbow.png" id="imageid" name="whichpuke">
 		
-			<p><input type=image src="styles/moneybutton.png" alt="what kind of money" onclick="changePuke('money')" value="money"><h2>Money</h2>
-			<p><input type=image src="styles/candy.png" alt="what kind of candy" onclick="changePuke('candy')" value="candy"><h2>Candy</h2>
-			<p><input type=image src="styles/rainbow.png" alt="what kind of rainbow" onclick="changePuke('rainbow')" value="rainbow"><h2>Rainbows</h2>
-			<p><input type=image src="styles/pukebutton.png" alt="what kind of sandwich" onclick="changePuke('puke')" value="puke"><h2>Actual Puke</h2>
+			<p><input id=money type=image src="styles/moneybutton.png" alt="what kind of money" onclick="changePuke('money')" value="money"><h2>Money</h2>
+			<p><input id=candy type=image src="styles/candy.png" alt="what kind of candy" onclick="changePuke('candy')" value="candy"><h2>Candy</h2>
+			<p><input id=rainbow type=image src="styles/rainbow.png" alt="what kind of rainbow" onclick="changePuke('rainbow')" value="rainbow"><h2>Rainbows</h2>
+			<p><input id=puke type=image src="styles/pukebutton.png" alt="what kind of sandwich" onclick="changePuke('puke')" value="puke"><h2>Actual Puke</h2>
 	
 
 			

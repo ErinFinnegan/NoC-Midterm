@@ -7,8 +7,8 @@
   var candy;
   var whichpuke;
   var mySketch;
-  var mydefault = "mydefault";
-  
+  var mydefault = new Image();
+
   var s = function( sketch ) {
   
 
@@ -30,7 +30,7 @@
     candy = sketch.loadImage("styles/candy.png");
     rainbow = sketch.loadImage("styles/rainbow.png");
     puke = sketch.loadImage("styles/puke.png");
-    whichpuke =  "mydefault";
+    whichpuke =  "imageid";
     console.log("whichpuke in the setup  = " + whichpuke);
   }
 
