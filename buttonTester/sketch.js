@@ -1,16 +1,24 @@
 var canvas;
 
-function setup() {
-  canvas = createCanvas(640,360);
-  canvas.position(300, 50);
+var _money;
+var _candy;
+var _rainbow;
+var _puke;
+
+function preload() {
   _money = loadImage("styles/quarter.png");
   _candy = loadImage("styles/candy.png");
   _rainbow = loadImage("styles/rainbow.png");
-  _puke = loadImage("styles/puke.png");
+  _puke = loadImage("styles/puke.png");	
+}
+
+function setup() {
+  canvas = createCanvas(640,360);
+  canvas.position(300, 50);
 };
 
 function draw() {
-	
+	//apparently this is horrible for performance
 	if(display_image === 1) {
 		image(_money, 100, 50, 200, 200);
 	} else if (display_image === 2) {
