@@ -2,26 +2,26 @@
 <head>
   <script language="javascript" type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.2.6/p5.min.js"></script>
   <script language="javascript" type="text/javascript" src="sketch.js"></script>
+			<script>
+			money = "styles/quarter.png"
+			candy = "styles/candy.png"
+			rainbow = "styles/rainbow.png"
+			puke = "styles/puke.png"
+			//var mydefault = rainbow;
+			function changePuke(imageid){
+				//whichpuke = mydefault;
+			    //onclick change the source of the image
+				document.getElementById("imageid").src="money";
+    			console.log("imageid in the changePuke function  = " + imageid);
+  				};
+
+			</script>
+
 </head>
 
 <body>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
 
-	<div><button type="button">Click Me!</button>
+	<div><button type="button" id="imageid" onclick="changePuke('money')"> Money!</button>
 	</div>
 </body>
 </html>

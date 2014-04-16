@@ -1,0 +1,4 @@
+Uncaught TypeError: Cannot read property 'canvas' of undefined 
+
+Uncaught ReferenceError: canvas is not defined 
+
