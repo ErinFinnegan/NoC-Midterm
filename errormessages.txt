@@ -1,4 +1,4 @@
-Uncaught TypeError: Cannot read property 'canvas' of undefined 
+Uncaught TypeError: Cannot read property 'canvas' of undefined   p5.min.js:1
 
 Uncaught ReferenceError: canvas is not defined 
 
