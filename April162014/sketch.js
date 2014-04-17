@@ -38,18 +38,17 @@
     sketch.clear();
     //sketch.background(0,255,0);
     for(var i=0; i<systems.length; i++){
-      if (mouthopen) {
+      if (mouthopen === true) {
     	  //systems[i].addParticle(mouthX*.5,bottomlip);
-        systems[i].addParticle(100,100);
+        systems[i].addParticle(mouthX, bottomlip);
+        console.log("mouthX, bottomlip " + mouthX + " , " + bottomlip);
       }
+
     	systems[i].run();
     }  
-    //if (mouthopen == true){  //changed the if to a while, made no difference
-      //sketch.mouthWasOpen();
-    //}
     
     sketch.fill(255,0,0);
-    sketch.rect(100,100,50,50);
+    //sketch.rect(100,100,50,50);
     //sketch.image(_money,100,100);
     //sketch.println(sketch.mouseX);
     //sketch.ellipse(sketch.mouseX,sketch.mouseY,16,16);

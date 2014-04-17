@@ -23,7 +23,6 @@ Particle.prototype.update = function(){
 
 // Method to display
 Particle.prototype.display = function() {
-  //var whichpuke = vomit;
   //myp5.fill(75, 255, 75);
   //myp5.ellipse(this.position.x,this.position.y,50,50);
   //myp5.image(myp5._money,this.position.x,this.position.y);
@@ -44,9 +43,6 @@ Particle.prototype.display = function() {
     myp5.image(myp5._puke, this.position.x, this.position.y, 50, 50);
   }
 
-   //myp5.image(mySketch.picImage.whichpuke, this.position.x, this.position.y, 50, 50);
-
-   //}
 }
 
  // Is the particle still useful?
