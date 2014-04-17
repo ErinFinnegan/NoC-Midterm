@@ -10,15 +10,6 @@
   var systems = [];
   var canvas;
 
-  /*sketch.mouthWasOpen = function() {
-      systems.push(new ParticleSystem(3, new PVector((mouthX*.5),bottomlip)));
-      //console.log('made it to the mouthWasOpen function');
-      //console.log('toplip, bottomlip ' + toplip + ',' + bottomlip);
-  }*/
-
-  /*sketch.preload = function() {
-
-  }*/
 
   sketch.setup = function() {
     mydefault = myp5.ellipse;
@@ -27,9 +18,7 @@
     sketch._rainbow = sketch.loadImage("styles/rainbow.png");
     sketch._puke = sketch.loadImage("styles/puke.png");    
     canvas = sketch.createCanvas(400, 300);
-    //myp5.canvas.position(160, 125);
     canvas.class("p5canvas");   //references the HTML
-    //sketch.mouthWasOpen();
     systems.push(new ParticleSystem());
 
   }
@@ -39,23 +28,17 @@
     //sketch.background(0,255,0);
     for(var i=0; i<systems.length; i++){
       if (mouthopen === true) {
-    	  //systems[i].addParticle(mouthX*.5,bottomlip);
         systems[i].addParticle(mouthX, bottomlip);
-        console.log("mouthX, bottomlip " + mouthX + " , " + bottomlip);
+        //console.log("mouthX, bottomlip " + mouthX + " , " + bottomlip);
       }
 
     	systems[i].run();
     }  
     
     sketch.fill(255,0,0);
-    //sketch.rect(100,100,50,50);
-    //sketch.image(_money,100,100);
-    //sketch.println(sketch.mouseX);
-    //sketch.ellipse(sketch.mouseX,sketch.mouseY,16,16);
 
-   // background(255);
   }
-  //mySketch = sketch;
+
 };
 // If its coming from outside the sketch you can use p5.thing, but inside the sketch its sketch.thing
 
